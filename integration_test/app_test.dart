@@ -6,7 +6,7 @@ import 'package:flutter_integration_test/main.dart' as app;
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group('Home Page E2E Test', () {
-    testWidgets('Clique 5x no FAB Incrementar', (WidgetTester tester) async {
+    testWidgets('Click 5x on FAB Increment', (WidgetTester tester) async {
       app.main();
       await tester.pumpAndSettle();
 
@@ -20,23 +20,23 @@ void main() {
     });
   });
 
-  testWidgets('Escreva no campo de texto para alterar o titulo da pagina',
+  testWidgets('Write in the text field to change the page title',
       (WidgetTester tester) async {
     app.main();
     await tester.pumpAndSettle();
 
-    var titulo =
-        find.byKey(const Key('titulo')).evaluate().single.widget as Text;
-    expect(titulo.data, equals('Home'));
+    var title =
+        find.byKey(const Key('title')).evaluate().single.widget as Text;
+    expect(title.data, equals('Home'));
 
-    // Possível bug do enterText no iPad (por conta do keyboard)
+    // Possible enterText bug on iPad (due to keyboard)
     // await Future.delayed(const Duration(seconds: 2));
-    // await tester.enterText(find.byKey(const Key('tituloInput')), 'Home Page');
+    // await tester.enterText(find.byKey(const Key('titleInput')), 'Home Page');
     // await Future.delayed(const Duration(seconds: 2));
     // await tester.pumpAndSettle();
     // await Future.delayed(const Duration(seconds: 2));
 
-    // titulo = find.byKey(const Key('titulo')).evaluate().single.widget as Text;
-    // expect(titulo.data, equals('Home Page'));
+    // title = find.byKey(const Key('title')).evaluate().single.widget as Text;
+    // expect(title.data, equals('Home Page'));
   });
 }

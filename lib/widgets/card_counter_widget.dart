@@ -16,7 +16,7 @@ class CardCounter extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Contador'),
+              const Text('Counter'),
               ValueListenableBuilder(
                 valueListenable: counter,
                 builder: (context, int counter, _) => Text(

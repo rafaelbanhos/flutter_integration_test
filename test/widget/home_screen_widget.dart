@@ -24,16 +24,15 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const App());
 
-    var titulo =
-        find.byKey(const Key('titulo')).evaluate().single.widget as Text;
+    var title = find.byKey(const Key('title')).evaluate().single.widget as Text;
 
     expect(find.byType(HomeScreen), findsOneWidget);
-    expect(titulo.data, equals('Home'));
+    expect(title.data, equals('Home'));
 
-    await tester.enterText(find.byKey(const Key('tituloInput')), 'Home Page');
+    await tester.enterText(find.byKey(const Key('titleInput')), 'Home Page');
     await tester.pumpAndSettle();
 
-    titulo = find.byKey(const Key('titulo')).evaluate().single.widget as Text;
-    expect(titulo.data, equals("Home Page"));
+    title = find.byKey(const Key('title')).evaluate().single.widget as Text;
+    expect(title.data, equals("Home Page"));
   });
 }

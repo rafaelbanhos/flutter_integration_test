@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           valueListenable: controller.title,
           builder: (context, String title, _) => Text(
             title,
-            key: const Key('titulo'),
+            key: const Key('title'),
           ),
         ),
       ),
@@ -27,12 +27,12 @@ class HomeScreen extends StatelessWidget {
             FractionallySizedBox(
               widthFactor: 0.8,
               child: TextFormField(
-                key: const Key('tituloInput'),
+                key: const Key('titleInput'),
                 initialValue: controller.title.value,
                 onChanged: (valor) => controller.title.value = valor,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  label: Text('Titulo'),
+                  label: Text('Title'),
                 ),
               ),
             ),
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => controller.counter.value++,
-        label: const Text('Incrementar'),
+        label: const Text('Increment'),
         icon: const Icon(Icons.plus_one),
       ),
     );
